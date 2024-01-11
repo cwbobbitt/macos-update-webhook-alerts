@@ -28,7 +28,6 @@ updates = []
 url="https://gdmf.apple.com/v2/pmv"
 get_updates = requests.get(url, verify=False)
 macOS=json.loads(get_updates.content)['AssetSets']['macOS']
-query = f""" select price, category, title, sm_title from `product.data_set.{table_name}` where product = @product"""
 QUERY = (
     f""" SELECT * FROM `{project_id}.{dataset_name}.{table_name}`"""
     )
